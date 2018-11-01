@@ -1,0 +1,149 @@
+// COMING SOON SECTION
+// GRID LAYOUT
+body {
+    background-color: lightblue;
+}
+
+ .grid-wrapper {
+    display: grid;
+    // grid-template-columns: 10% 10% 60% 10% 10%;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    
+    .col-1 {
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .cs-email {
+        transform: rotate(-90deg);
+
+            a {
+                color: #000000;
+                text-decoration: none;
+                font-family: gitan-latin, sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 0.8em;
+                white-space: nowrap;
+            }
+        }
+    }
+
+
+
+
+
+
+    .col-cover {
+        grid-column: 2 / 3;
+        grid-row: 1;
+        // position: relative;
+        display: flex;
+        justify-content: center;
+        
+        .col-2 {
+            z-index: 99;
+            display: flex;
+            // flex-direction: column;
+            position: absolute;
+            top: 30%;
+            
+            
+            
+        
+            p{
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0;
+            line-height: 1.2;
+            font-family: gitan-latin, sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 10em;
+            color: gold;
+            opacity: 0.6;
+            
+            }
+        }
+
+        .cs-image-container {
+            position: relative;
+
+        .image-cover {
+            z-index: 1;
+            // grid-row: 1;
+            position: relative;
+            top: 0;
+            left: 0;
+
+            svg {
+                #Layer_1 path{
+                    fill: lightblue;
+                }
+
+                #Layer_2 path{
+                    stroke-width: 20;
+                }
+
+                #Layer_3 path{
+                    stroke-width: 1;
+                }
+            }
+         }   
+        .image-behind {
+            z-index: 0;
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            width: 80%;
+        }
+    
+        }
+
+        .col-4 {
+        z-index: 99;
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+
+            p{
+            
+            padding: 0;
+            margin: 0;
+            line-height: 1.2;
+            font-family: gitan-latin, sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 4.5em;
+            color: black;
+            }
+
+    }
+
+}
+
+    .col-5 {
+        grid-column: 3;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        p {
+        transform: rotate(90deg);            
+        white-space: nowrap;
+        font-family: gitan-latin, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.8em;
+        }
+    }
+
+
+}

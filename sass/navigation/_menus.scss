@@ -4,6 +4,9 @@
 	float: left;
 	width: 100%;
 
+	.menu {
+		display: none;
+		
 	ul {
 		display: none;
 		list-style: none;
@@ -48,6 +51,8 @@
 			left: auto;
 		}
 	}
+	}
+
 
 	li {
 		float: left;
