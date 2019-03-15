@@ -1,0 +1,62 @@
+.cover-loader {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    transition: opacity 2s ease-out;
+    opacity: 1;
+}
+
+.cover-loader.fade-out {
+    opacity: 0;
+}
+
+
+.fp-video-cover {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 85vh;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    transition: 1s opacity;
+
+    // For bigger screen sizes
+    @media screen and (min-width: 1500px){
+        height: auto;
+    }
+
+    // For mobile screen sizes
+    @media screen and (max-width: 420px){
+        height: 60vh;
+    }
+}
+
+
+.custom-logo {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    z-index: 100;
+
+    svg {
+        text {
+            fill: white;
+        }
+    }
+}
+
+.fp-section-2 {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    opacity: 0.9;
+    // Pushes the section below the video background
+    // margin-top: 100vh;
+}
+
