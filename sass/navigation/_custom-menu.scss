@@ -1,8 +1,28 @@
 
-// The Menu is switched off for Coming Soon Page
-
 .main-navigation { 
+    // flex: 50%;
+    display: flex;
+    justify-content: center;
 
-    .menu { display: block }
+    .menu { 
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+
+    .menu-item {
+        padding: 0 0 0 1.5em;
+
+        a {
+            @include flexText_p;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: line-through;
+            }
+            } 
+        }
+
+    }
 
 }

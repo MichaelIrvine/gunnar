@@ -352,7 +352,7 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
+  color: #fff;
   font-family: sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -362,7 +362,9 @@ h1, h2, h3, h4, h5, h6 {
   clear: both; }
 
 p {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  font-size: calc(26px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
+  font-family: ivymode, sans-serif; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -413,7 +415,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #fff;
+  background: #000;
   /* Fallback for when there is no custom background color defined. */ }
 
 hr {
@@ -537,11 +539,12 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: #fff;
+  font-family: ivymode, sans-serif; }
   a:visited {
-    color: purple; }
+    color: #fff; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #fff; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -550,65 +553,24 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Custom Menus
+--------------------------------------------------------------*/
 .main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%; }
+  display: flex;
+  justify-content: center; }
   .main-navigation .menu {
-    display: none; }
-    .main-navigation .menu ul {
-      display: none;
-      list-style: none;
-      margin: 0;
-      padding-left: 0; }
-      .main-navigation .menu ul ul {
-        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-        float: left;
-        position: absolute;
-        top: 100%;
-        left: -999em;
-        z-index: 99999; }
-        .main-navigation .menu ul ul ul {
-          left: -999em;
-          top: 0; }
-        .main-navigation .menu ul ul li:hover > ul, .main-navigation .menu ul ul li.focus > ul {
-          left: 100%; }
-        .main-navigation .menu ul ul a {
-          width: 200px; }
-      .main-navigation .menu ul li:hover > ul,
-      .main-navigation .menu ul li.focus > ul {
-        left: auto; }
-  .main-navigation li {
-    float: left;
-    position: relative; }
-  .main-navigation a {
-    display: block;
-    text-decoration: none; }
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block; }
-
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none; }
-
-  .main-navigation ul {
-    display: block; } }
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden; }
-.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous {
-  float: left;
-  width: 50%; }
-.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%; }
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0; }
+    .main-navigation .menu .menu-item {
+      padding: 0 0 0 1.5em; }
+      .main-navigation .menu .menu-item a {
+        font-size: calc(26px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
+        text-decoration: none; }
+        .main-navigation .menu .menu-item a:hover {
+          text-decoration: line-through; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -834,6 +796,28 @@ object {
   transform: translateX(-50%); }
 
 /*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  opacity: 0.9; }
+  .site-footer .footer-control-panel {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+    .site-footer .footer-control-panel .custom-logo__footer svg {
+      width: 250px; }
+      .site-footer .footer-control-panel .custom-logo__footer svg text {
+        fill: white; }
+  .site-footer .footer-nav-about_container .footer-about {
+    width: 68%;
+    margin: 0 auto; }
+
+/*--------------------------------------------------------------
 # Front Page
 --------------------------------------------------------------*/
 .cover-loader {
@@ -875,39 +859,8 @@ object {
   .custom-logo svg text {
     fill: white; }
 
-.fp-section-2 {
-  height: 100vh;
-  width: 100%;
-  background-color: black;
-  opacity: 0.9; }
-
 /*--------------------------------------------------------------
 # Coming Soon
 --------------------------------------------------------------*/
-body {
-  background-color: white; }
-
-.menu-toggle {
-  display: none; }
-
-.cs-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; }
-  .cs-container .cs-image-container {
-    width: 45%;
-    max-width: 400px; }
-    @media screen and (max-width: 600px) {
-      .cs-container .cs-image-container {
-        width: 70%; } }
-  .cs-container .text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    .cs-container .text-container a {
-      color: black; }
 
 /*# sourceMappingURL=style.css.map */

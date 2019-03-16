@@ -190,6 +190,21 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_page($args);
 }
 
+/**
+ * Custom Footer
+ */
+if( function_exists('acf_add_options_page') ) {
+    $args = array(
+          'page_title' => 'Footer',
+		  'menu_title' => 'Footer',
+		  'menu_slug'  => 'footer',
+          'icon_url' => 'dashicons-edit'
+          //other args
+      );
+    acf_add_options_page($args);
+
+}
+
 
 /**
  * GUNNAR CPT - Projects ------

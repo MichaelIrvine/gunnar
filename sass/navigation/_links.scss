@@ -1,5 +1,6 @@
 a {
 	color: $color__link;
+	font-family: $font__ivymode;
 
 	&:visited {
 		color: $color__link-visited;
@@ -8,6 +9,7 @@ a {
 	&:focus,
 	&:active {
 		color: $color__link-hover;
+		
 	}
 	&:focus {
 		outline: thin dotted;

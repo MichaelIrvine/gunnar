@@ -27,3 +27,9 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+
+
+@mixin flexText_p {
+	font-size: calc(26px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
+}

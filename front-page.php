@@ -36,10 +36,7 @@ get_header();
 		<video autoplay muted loop class="fp-video-cover">
 			<source src="<?php echo $rand_row_video; ?>" type="video/mp4">
 		</video>
-		<section class="fp-section-2">
 		
-
-		</section>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

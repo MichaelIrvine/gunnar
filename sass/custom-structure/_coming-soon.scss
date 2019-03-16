@@ -1,39 +1,37 @@
 // COMING SOON SECTION
 // GRID LAYOUT
-body {
-    background-color: white;
-}
 
-.menu-toggle {
-    display: none;
-}
+
+// .menu-toggle {
+//     display: none;
+// }
  
 
- .cs-container {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     height: 100vh;
+//  .cs-container {
+//      display: flex;
+//      flex-direction: column;
+//      justify-content: center;
+//      align-items: center;
+//      height: 100vh;
 
-     .cs-image-container {
-         width: 45%;
-         max-width: 400px;
+//      .cs-image-container {
+//          width: 45%;
+//          max-width: 400px;
 
-         @media screen and (max-width: 600px){
-             width: 70%;
-         }
-     }
+//          @media screen and (max-width: 600px){
+//              width: 70%;
+//          }
+//      }
 
-     .text-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+//      .text-container {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
 
-        a {
-            color: black;
+//         a {
+//             color: black;
 
-        }
-     }
- }
+//         }
+//      }
+//  }

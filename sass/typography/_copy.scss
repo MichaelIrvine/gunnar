@@ -1,5 +1,8 @@
 p {
 	margin-bottom: 1.5em;
+	@include flexText_p;
+	font-family: $font__ivymode;
+	// letter-spacing: 2px;
 }
 
 dfn, cite, em, i {
