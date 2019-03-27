@@ -1,35 +1,42 @@
+.site-footer.front-page__footer {
+
+    transition: all 800ms ease-in;
+    margin-top: 100vh; 
+}
+
 .site-footer {
-    height: 100vh;
+    background-color: white;
     width: 100%;
-    background-color: black;
-    opacity: 0.9;
+    
 
     .footer-control-panel {
-        height: auto;
-        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
 
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center; 
+        .custom-logo {
+            grid-column: 1;
+            grid-row: 1;
 
-        .custom-logo__footer {
 
-            svg {
-                width: 250px;
+        }
 
-                text {
-                    fill: white;
+        .projects-navigation {
+             grid-column: 1;
+             grid-row: 2;
+
+             #project-menu {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                flex-wrap: wrap;
+                list-style-type: none;
+
+                .menu-item {
+                    padding: 0 2em 0 2em;
                 }
-            }
+             }
         }
+
     }
-
-    .footer-nav-about_container {
-
-        .footer-about {
-            width: 68%;
-            margin: 0 auto;
-        }
-    }
-
 }

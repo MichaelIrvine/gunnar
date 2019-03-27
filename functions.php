@@ -45,6 +45,8 @@ if ( ! function_exists( 'gunnar_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'gunnar' ),
+			'projects' => esc_html__( 'Projects', 'gunnar' ),
+
 		) );
 
 		/*
@@ -255,6 +257,8 @@ if( function_exists('acf_add_options_page') ) {
         'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
 				'menu_icon'          => 'dashicons-migrate',
 				'taxonomies'          => array('project_types'),
+				'show_in_nav_menus' => true,
+
     );
 	register_post_type( 'projects', $args );
 

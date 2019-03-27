@@ -10,6 +10,17 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+@font-face {
+    font-family: Tundra;  
+    src: url(http://localhost:8888/gunnar/wp-content/themes/gunnar/fonts/Tundra.ttf);   
+}
+
+@font-face {
+    font-family: Druk;  
+    src: url(http://localhost:8888/gunnar/wp-content/themes/gunnar/fonts/DrukTextWide-Bold.otf);   
+}
+
 @import "headings";
 
 @import "copy";
+

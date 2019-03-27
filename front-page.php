@@ -17,13 +17,7 @@ get_header();
 	
 	<div id="primary__front-page" class="content-area__front-page">
 		<main id="main__front-page" class="site-main__front-page">
-			
-			<div class="custom-logo">
-				<?php
-				$customLogo = get_field('gunnar_logotype', 'option');
-				echo file_get_contents( $customLogo );
-				?>
-			</div>
+
 		<!-- FRONT PAGE VIDEO LOOP -->
 		<!-- RANDOM VIDEO BACKGROUND -->
 

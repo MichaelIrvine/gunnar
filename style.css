@@ -352,19 +352,26 @@ input,
 select,
 optgroup,
 textarea {
-  color: #fff;
+  color: #000;
   font-family: sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
+@font-face {
+  font-family: Tundra;
+  src: url(http://localhost:8888/gunnar/wp-content/themes/gunnar/fonts/Tundra.ttf); }
+@font-face {
+  font-family: Druk;
+  src: url(http://localhost:8888/gunnar/wp-content/themes/gunnar/fonts/DrukTextWide-Bold.otf); }
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  clear: both;
+  font-family: Druk, serif; }
 
 p {
   margin-bottom: 1.5em;
   font-size: calc(26px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
-  font-family: ivymode, sans-serif; }
+  font-family: Druk, serif; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -396,7 +403,7 @@ abbr, acronym {
   cursor: help; }
 
 mark, ins {
-  background: #fff9c0;
+  background: #0009c0;
   text-decoration: none; }
 
 big {
@@ -539,12 +546,13 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #fff;
-  font-family: ivymode, sans-serif; }
+  color: #000;
+  font-family: Druk, serif;
+  text-decoration: none; }
   a:visited {
-    color: #fff; }
+    color: #000; }
   a:hover, a:focus, a:active {
-    color: #fff; }
+    color: #000; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -562,15 +570,13 @@ a {
   .main-navigation .menu {
     display: flex;
     list-style-type: none;
-    margin: 0;
-    padding-left: 0; }
-    .main-navigation .menu .menu-item {
-      padding: 0 0 0 1.5em; }
-      .main-navigation .menu .menu-item a {
-        font-size: calc(26px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
-        text-decoration: none; }
-        .main-navigation .menu .menu-item a:hover {
-          text-decoration: line-through; }
+    padding-left: 0;
+    margin: 0; }
+    .main-navigation .menu .menu-item a {
+      font-size: calc(22px + (22 - 26) * ((100vw - 300px) / (1600 - 300)));
+      text-decoration: none; }
+      .main-navigation .menu .menu-item a:hover {
+        text-decoration: line-through; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -798,24 +804,31 @@ object {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+.site-footer.front-page__footer {
+  transition: all 800ms ease-in;
+  margin-top: 100vh; }
+
 .site-footer {
-  height: 100vh;
-  width: 100%;
-  background-color: black;
-  opacity: 0.9; }
+  background-color: white;
+  width: 100%; }
   .site-footer .footer-control-panel {
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center; }
-    .site-footer .footer-control-panel .custom-logo__footer svg {
-      width: 250px; }
-      .site-footer .footer-control-panel .custom-logo__footer svg text {
-        fill: white; }
-  .site-footer .footer-nav-about_container .footer-about {
-    width: 68%;
-    margin: 0 auto; }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; }
+    .site-footer .footer-control-panel .custom-logo {
+      grid-column: 1;
+      grid-row: 1; }
+    .site-footer .footer-control-panel .projects-navigation {
+      grid-column: 1;
+      grid-row: 2; }
+      .site-footer .footer-control-panel .projects-navigation #project-menu {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+        list-style-type: none; }
+        .site-footer .footer-control-panel .projects-navigation #project-menu .menu-item {
+          padding: 0 2em 0 2em; }
 
 /*--------------------------------------------------------------
 # Front Page
@@ -829,6 +842,9 @@ object {
 
 .cover-loader.fade-out {
   opacity: 0; }
+
+.cover-loader.is-hidden {
+  display: none; }
 
 .fp-video-cover {
   position: fixed;
@@ -849,18 +865,16 @@ object {
     .fp-video-cover {
       height: 60vh; } }
 
-.custom-logo {
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translateX(-50%);
-  z-index: 100; }
-  .custom-logo svg text {
-    fill: white; }
-
 /*--------------------------------------------------------------
 # Coming Soon
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Specials
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# UI FEATURES
+--------------------------------------------------------------*/
+.is-visible {
+  display: block; }
 
 /*# sourceMappingURL=style.css.map */

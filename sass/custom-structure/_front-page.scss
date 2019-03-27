@@ -9,6 +9,9 @@
 .cover-loader.fade-out {
     opacity: 0;
 }
+.cover-loader.is-hidden {
+    display: none;
+}
 
 
 .fp-video-cover {
@@ -36,20 +39,6 @@
 }
 
 
-.custom-logo {
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translateX(-50%);
-    z-index: 100;
-
-    svg {
-        text {
-            fill: white;
-        }
-    }
-}
 
 
 

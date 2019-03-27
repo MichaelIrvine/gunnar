@@ -33,3 +33,7 @@
 @mixin flexText_p {
 	font-size: calc(26px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
 }
+
+@mixin flexText_a {
+	font-size: calc(22px + (22 - 26) * ((100vw - 300px) / (1600 - 300)));
+}
