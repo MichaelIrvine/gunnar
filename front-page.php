@@ -14,7 +14,8 @@
 
 get_header();
 ?>
-	
+		<div class="cover-loader"></div>
+
 	<div id="primary__front-page" class="content-area__front-page">
 		<main id="main__front-page" class="site-main__front-page">
 
@@ -22,7 +23,7 @@ get_header();
 		<!-- RANDOM VIDEO BACKGROUND -->
 
 		<?php
-		$rows = get_field('front_page_video');
+		$rows = get_field('page_video_background', 'option');
 		$rand_row = $rows[ array_rand( $rows ) ];
 		$rand_row_video = $rand_row['background_video'];
 		?>

@@ -32,5 +32,4 @@
 		
 	</header><!-- #masthead -->
 
-	<!-- <div class="cover-loader"></div> -->
 	<div id="content" class="site-content">

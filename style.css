@@ -360,7 +360,7 @@ textarea {
 
 @font-face {
   font-family: Tundra;
-  src: url(http://localhost:8888/gunnar/wp-content/themes/gunnar/fonts/Tundra.ttf); }
+  src: url(http://localhost:8888/gunnar/wp-content/themes/gunnar/fonts/tundra-webfont.woff); }
 @font-face {
   font-family: Druk;
   src: url(http://localhost:8888/gunnar/wp-content/themes/gunnar/fonts/DrukTextWide-Bold.otf); }
@@ -866,6 +866,57 @@ object {
       height: 60vh; } }
 
 /*--------------------------------------------------------------
+# Project Pages
+--------------------------------------------------------------*/
+.project-pages-video-cover {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: 85vh;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity; }
+  @media screen and (min-width: 1500px) {
+    .project-pages-video-cover {
+      height: auto; } }
+  @media screen and (max-width: 420px) {
+    .project-pages-video-cover {
+      height: 60vh; } }
+
+article.page {
+  height: 100vh;
+  display: flex; }
+  article.page .entry-header {
+    display: flex;
+    width: 25%; }
+    article.page .entry-header .project-page-title {
+      width: auto;
+      display: flex;
+      align-items: center; }
+      article.page .entry-header .project-page-title svg {
+        transform: rotate(-90deg); }
+        article.page .entry-header .project-page-title svg text {
+          fill: white; }
+    article.page .entry-header .entry-title.visually-hidden {
+      border: 0;
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute !important;
+      width: 1px;
+      word-wrap: normal !important; }
+  article.page .entry-content {
+    width: 100%;
+    height: 100vh; }
+
+/*--------------------------------------------------------------
 # Coming Soon
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -876,5 +927,46 @@ object {
 --------------------------------------------------------------*/
 .is-visible {
   display: block; }
+
+/*--------------------------------------------------------------
+# Slick Settings
+--------------------------------------------------------------*/
+/*
+** Project Sliders
+*/
+.slick-gallery__projects {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  margin: 0 auto;
+  height: auto;
+  max-width: 500px; }
+
+.slick-gallery__projects.slick-initialized {
+  visibility: visible;
+  opacity: 1; }
+
+.project-gallery-arrow {
+  border: none;
+  background-color: transparent; }
+
+.projects-gallery-previous {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  z-index: 999;
+  height: 100%;
+  cursor: url("http://localhost:8888/gunnar/wp-content/uploads/2019/03/gunnar-custom-cursor_left.png"), auto; }
+
+.projects-gallery-next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  position: absolute;
+  z-index: 999;
+  height: 100%;
+  cursor: crosshair; }
 
 /*# sourceMappingURL=style.css.map */

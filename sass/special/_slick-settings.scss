@@ -1,0 +1,43 @@
+/*
+** Project Sliders
+*/
+.slick-gallery__projects {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    margin: 0 auto;
+    height: auto;
+    max-width: 500px;
+}
+
+.slick-gallery__projects.slick-initialized {
+    visibility: visible;
+    opacity: 1; 
+}
+
+
+.project-gallery-arrow {
+    border: none;
+    background-color: transparent;
+}
+
+.projects-gallery-previous {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    z-index: 999;
+    height: 100%;
+    cursor: url('http://localhost:8888/gunnar/wp-content/uploads/2019/03/gunnar-custom-cursor_left.png'), auto;
+}
+
+.projects-gallery-next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    position: absolute;
+    z-index: 999;
+    height: 100%;
+    cursor: crosshair
+}

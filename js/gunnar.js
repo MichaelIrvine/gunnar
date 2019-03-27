@@ -4,16 +4,16 @@
 
 
 // Front Page Pre Loader
-// (function(){
-// const cover = document.querySelector(".cover-loader");
+(function(){
+const cover = document.querySelector("body .cover-loader");
 
-// setTimeout(() => {
-//   cover.classList.add("fade-out");
-//   cover.addEventListener("transitionend", function() {
-//     cover.classList.add("is-hidden");
-//   });
-// }, 1500);
-// })();
+setTimeout(() => {
+  cover.classList.add("fade-out");
+  cover.addEventListener("transitionend", function() {
+    cover.classList.add("is-hidden");
+  });
+}, 1500);
+})();
 
 // // Front Page Methods
 const frontPageMethods = {

@@ -121,15 +121,25 @@ add_action( 'widgets_init', 'gunnar_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+
+    	
 function gunnar_scripts() {
 	wp_enqueue_style( 'gunnar-style', get_stylesheet_uri() );
+	
+	// Slick Slider CSS 
+	wp_enqueue_style('gunnar-slick', get_stylesheet_directory_uri() . '/node_modules/slick-carousel/slick/slick.css', true);
+	wp_enqueue_style('gunnar-slicktheme', get_stylesheet_directory_uri() . '/node_modules/slick-carousel/slick/slick-theme.css', true);
+	
 	// Adobe Font
 	wp_enqueue_style('gunnar-adobefonts', "https://use.typekit.net/xzq2utj.css");
+
+
 
 	wp_enqueue_script( 'gunnar-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	// Main JS Enqueue
 	wp_enqueue_script( 'gunnar-main', get_template_directory_uri() . '/js/gunnar.js', array('jquery'), '20181104', true );
+	
 
 	wp_enqueue_script( 'gunnar-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -138,6 +148,21 @@ function gunnar_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'gunnar_scripts' );
+
+
+
+
+
+function gunnar_gallery_scripts() {
+
+		wp_enqueue_script('gunnar-slickjs', get_stylesheet_directory_uri().'/node_modules/slick-carousel/slick/slick.min.js', array('jquery'), '1', true);
+
+		wp_enqueue_script('gunnar-slicksettings', get_stylesheet_directory_uri() . '/js/slicksettings.js', array('gunnar-slickjs'), '1', false);
+}
+
+add_action( 'wp_enqueue_scripts', 'gunnar_gallery_scripts' );
+
+
 
 /**
  * Implement the Custom Header feature.
@@ -202,6 +227,21 @@ if( function_exists('acf_add_options_page') ) {
 		  'menu_slug'  => 'footer',
           'icon_url' => 'dashicons-edit'
           //other args
+      );
+    acf_add_options_page($args);
+
+}
+
+/**
+ * Video Background
+ */
+if( function_exists('acf_add_options_page') ) {
+    $args = array(
+			'page_title' => 'Video Background',
+		  'menu_title' => 'Video Background',
+		  'menu_slug'  => 'video-background',
+			'icon_url' => 'dashicons-welcome-view-site'
+			//other args
       );
     acf_add_options_page($args);
 
