@@ -1,8 +1,8 @@
 p {
 	margin-bottom: 1.5em;
 	@include flexText_p;
-	font-family: $font__druk;
-	// letter-spacing: 2px;
+	font-family: $font__gunnar;
+	-webkit-font-smoothing: antialiased;
 }
 
 dfn, cite, em, i {

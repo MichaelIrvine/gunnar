@@ -9,6 +9,14 @@
 
 ?>
 
+		<?php 
+
+		$mobileBackground = get_field('mobile_background', 'option'); 
+
+		?>
+		
+		<!-- <div class="mobile-background" style="background-image: url('<?php echo $mobileBackground; ?>')"></div> -->
+
 <!-- RANDOM VIDEO BACKGROUND -->
 	<div class="project-page-video-background">
 		<?php
@@ -38,13 +46,8 @@
 		else :
 			the_title( '<h2 class="entry-title visually-hidden"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		?>
+	
 	</header><!-- .entry-header -->
 
 	
@@ -68,7 +71,7 @@
 		
 		?>
 
-		<div class="project-outer-container">
+		<!-- <div class="project-outer-container"> -->
 		<?php
 		echo '<ul class="project-list slick-gallery__projects">';
 		// check if the flexible content field has rows of data
@@ -84,7 +87,7 @@
 					$projectTitle = get_sub_field('project_title');
 
 					echo '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" />';
-					echo '<h2>' . $projectTitle . '</h2>';
+					echo '<h2 class="project-title">' . $projectTitle . '</h2>';
 				endif;
 				echo '</li>';
 				

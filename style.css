@@ -358,20 +358,15 @@ textarea {
   font-size: 1rem;
   line-height: 1.5; }
 
-@font-face {
-  font-family: Tundra;
-  src: url(http://localhost:8888/gunnar/wp-content/themes/gunnar/fonts/tundra-webfont.woff); }
-@font-face {
-  font-family: Druk;
-  src: url(http://localhost:8888/gunnar/wp-content/themes/gunnar/fonts/DrukTextWide-Bold.otf); }
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: Druk, serif; }
+  font-family: "swis721_ex_btbold"; }
 
 p {
   margin-bottom: 1.5em;
   font-size: calc(26px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
-  font-family: Druk, serif; }
+  font-family: "swis721_ex_btbold";
+  -webkit-font-smoothing: antialiased; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -431,9 +426,6 @@ hr {
   height: 1px;
   margin-bottom: 1.5em; }
 
-ul, ol {
-  margin: 0 0 1.5em 3em; }
-
 ul {
   list-style: disc; }
 
@@ -479,8 +471,7 @@ input[type="submit"] {
   color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
   font-size: 0.75rem;
-  line-height: 1;
-  padding: .6em 1em .4em; }
+  line-height: 1; }
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
@@ -547,14 +538,17 @@ textarea {
 --------------------------------------------------------------*/
 a {
   color: #000;
-  font-family: Druk, serif;
-  text-decoration: none; }
+  font-family: "swis721_ex_btbold";
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: url("https://gunnarfloral.com/wp-content/uploads/2019/04/gunnar-main-cursor-86x86.png") 43 43, default;
+  letter-spacing: 1px; }
   a:visited {
     color: #000; }
   a:hover, a:focus, a:active {
     color: #000; }
   a:focus {
-    outline: thin dotted; }
+    outline: 0; }
   a:hover, a:active {
     outline: 0; }
 
@@ -791,6 +785,9 @@ object {
 /*--------------------------------------------------------------
 # Custom Structure
 --------------------------------------------------------------*/
+.site {
+  overflow: hidden; }
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -804,31 +801,160 @@ object {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.site-footer.front-page__footer {
-  transition: all 800ms ease-in;
-  margin-top: 100vh; }
-
 .site-footer {
-  background-color: white;
-  width: 100%; }
+  display: flex;
+  transition: all 800ms ease-in;
+  padding: 2em;
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  z-index: 100; }
+  .site-footer:focus {
+    outline: none; }
+  @media screen and (max-width: 975px) {
+    .site-footer {
+      flex-direction: column;
+      padding: 0;
+      margin-top: 10vh; } }
   .site-footer .footer-control-panel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr; }
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    width: 75%; }
+    @media screen and (max-width: 975px) {
+      .site-footer .footer-control-panel {
+        width: 100%;
+        margin-top: 30vh;
+        justify-content: center; } }
+    @media screen and (max-width: 620px) {
+      .site-footer .footer-control-panel {
+        margin-bottom: 10vh;
+        margin-top: 5vh; } }
     .site-footer .footer-control-panel .custom-logo {
-      grid-column: 1;
-      grid-row: 1; }
-    .site-footer .footer-control-panel .projects-navigation {
-      grid-column: 1;
-      grid-row: 2; }
-      .site-footer .footer-control-panel .projects-navigation #project-menu {
+      opacity: 0;
+      filter: blur(3px);
+      transition: opacity 700ms ease-in, filter 600ms ease-in; }
+      @media screen and (max-width: 975px) {
+        .site-footer .footer-control-panel .custom-logo {
+          margin: 0 auto; } }
+      .site-footer .footer-control-panel .custom-logo svg {
+        fill: white; }
+        @media screen and (max-width: 975px) {
+          .site-footer .footer-control-panel .custom-logo svg {
+            width: 80vw; } }
+    .site-footer .footer-control-panel .projects-navigation #primary-menu {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      list-style-type: none;
+      max-width: 80%; }
+      @media screen and (max-width: 975px) {
+        .site-footer .footer-control-panel .projects-navigation #primary-menu {
+          max-width: 100vw;
+          justify-content: center; } }
+      @media screen and (max-width: 620px) {
+        .site-footer .footer-control-panel .projects-navigation #primary-menu {
+          justify-content: flex-start; } }
+      .site-footer .footer-control-panel .projects-navigation #primary-menu .menu-item {
+        padding: 0 2em 0 2em;
+        opacity: 0;
+        filter: blur(3px);
+        transition: opacity 700ms ease-in, filter 600ms ease-in; }
+        @media screen and (max-width: 975px) {
+          .site-footer .footer-control-panel .projects-navigation #primary-menu .menu-item {
+            line-height: 1.7; } }
+        .site-footer .footer-control-panel .projects-navigation #primary-menu .menu-item a {
+          color: white;
+          font-size: calc(28px + (24 - 28) * ((100vw - 300px) / (1600 - 300)));
+          text-transform: uppercase; }
+          @media screen and (max-width: 620px) {
+            .site-footer .footer-control-panel .projects-navigation #primary-menu .menu-item a {
+              font-size: calc(20px + (20 - 26) * ((100vw - 300px) / (1600 - 300))); } }
+          .site-footer .footer-control-panel .projects-navigation #primary-menu .menu-item a:hover {
+            color: #80FF72;
+            text-shadow: 2px 2px 4px #80ff72; }
+  .site-footer .contact {
+    position: relative;
+    width: 25%; }
+    @media screen and (max-width: 975px) {
+      .site-footer .contact {
         display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+        padding: 2em; } }
+    .site-footer .contact .contact-title {
+      opacity: 0;
+      filter: blur(3px);
+      transition: opacity 700ms ease-in, filter 600ms ease-in;
+      display: inline-block;
+      position: absolute;
+      right: 170px; }
+      @media screen and (max-width: 975px) {
+        .site-footer .contact .contact-title {
+          position: static; } }
+      .site-footer .contact .contact-title svg {
+        transform: rotate(25deg); }
+        .site-footer .contact .contact-title svg text {
+          fill: white;
+          stroke: black;
+          stroke-width: 0.5px; }
+    .site-footer .contact .contact-info {
+      position: absolute;
+      top: 0;
+      right: 0; }
+      @media screen and (max-width: 975px) {
+        .site-footer .contact .contact-info {
+          position: static;
+          flex: 1; } }
+      .site-footer .contact .contact-info .contact-info-list {
+        display: flex;
+        flex-direction: column;
         margin: 0;
         padding: 0;
         flex-wrap: wrap;
-        list-style-type: none; }
-        .site-footer .footer-control-panel .projects-navigation #project-menu .menu-item {
-          padding: 0 2em 0 2em; }
+        list-style-type: none;
+        transform: rotate(5deg); }
+        @media screen and (max-width: 975px) {
+          .site-footer .contact .contact-info .contact-info-list {
+            flex-direction: column; } }
+        .site-footer .contact .contact-info .contact-info-list .contact-info-item {
+          opacity: 0;
+          filter: blur(3px);
+          transition: opacity 700ms ease-in, filter 600ms ease-in; }
+          .site-footer .contact .contact-info .contact-info-list .contact-info-item a {
+            color: white; }
+            .site-footer .contact .contact-info .contact-info-list .contact-info-item a p {
+              margin-bottom: 0;
+              line-height: 0.5;
+              font-size: calc(18px + (18 - 22) * ((100vw - 300px) / (1600 - 300))); }
+              .site-footer .contact .contact-info .contact-info-list .contact-info-item a p:hover {
+                color: #80FF72;
+                text-shadow: 2px 2px 4px #80ff72; }
+    .site-footer .contact .contact-flower {
+      opacity: 0;
+      filter: blur(3px);
+      transition: opacity 700ms ease-in, filter 600ms ease-in;
+      transition-delay: 200ms;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      max-width: 150px; }
+      @media screen and (max-width: 975px) {
+        .site-footer .contact .contact-flower {
+          position: static;
+          margin: 0 auto; } }
+
+.front-page__footer {
+  margin-top: 100vh; }
+
+.front-page__footer.hidden {
+  opacity: 0; }
+
+.front-page__footer.visible {
+  opacity: 1; }
 
 /*--------------------------------------------------------------
 # Front Page
@@ -846,7 +972,14 @@ object {
 .cover-loader.is-hidden {
   display: none; }
 
-.fp-video-cover {
+.site-main__front-page .fp-colophon-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1; }
+.site-main__front-page .fp-video-cover {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -854,16 +987,19 @@ object {
   min-height: 100%;
   width: auto;
   height: 85vh;
-  z-index: -100;
+  z-index: -1;
   transform: translateX(-50%) translateY(-50%);
   background-size: cover;
-  transition: 1s opacity; }
-  @media screen and (min-width: 1500px) {
-    .fp-video-cover {
-      height: auto; } }
-  @media screen and (max-width: 420px) {
-    .fp-video-cover {
-      height: 60vh; } }
+  transition: all 700ms ease-in-out; }
+  @media screen and (min-width: 1370px) {
+    .site-main__front-page .fp-video-cover {
+      height: 110vh; } }
+  @media screen and (max-height: 680px) {
+    .site-main__front-page .fp-video-cover {
+      height: 100vh; } }
+
+.fp-colophon-link.disabled {
+  z-index: -2; }
 
 /*--------------------------------------------------------------
 # Project Pages
@@ -879,28 +1015,41 @@ object {
   z-index: -100;
   transform: translateX(-50%) translateY(-50%);
   background-size: cover;
-  transition: 1s opacity; }
-  @media screen and (min-width: 1500px) {
+  transition: 1s opacity;
+  filter: blur(5px); }
+  @media screen and (min-width: 1360px) {
     .project-pages-video-cover {
       height: auto; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-height: 680px) {
     .project-pages-video-cover {
-      height: 60vh; } }
+      height: 100vh; } }
 
 article.page {
-  height: 100vh;
-  display: flex; }
+  display: flex;
+  width: 100%; }
+  @media screen and (max-width: 620px) {
+    article.page {
+      flex-direction: column;
+      height: auto; } }
   article.page .entry-header {
     display: flex;
-    width: 25%; }
+    align-items: flex-start;
+    width: 20vw;
+    margin-top: 2em;
+    margin-left: 2em; }
     article.page .entry-header .project-page-title {
-      width: auto;
+      width: 100%;
       display: flex;
-      align-items: center; }
+      align-items: center;
+      justify-content: center; }
+      @media screen and (max-width: 768px) {
+        article.page .entry-header .project-page-title {
+          display: none; } }
       article.page .entry-header .project-page-title svg {
-        transform: rotate(-90deg); }
-        article.page .entry-header .project-page-title svg text {
-          fill: white; }
+        width: auto;
+        height: 77vh; }
+        article.page .entry-header .project-page-title svg g path {
+          stroke-width: 0.20; }
     article.page .entry-header .entry-title.visually-hidden {
       border: 0;
       clip: rect(1px, 1px, 1px, 1px);
@@ -913,12 +1062,74 @@ article.page {
       width: 1px;
       word-wrap: normal !important; }
   article.page .entry-content {
-    width: 100%;
-    height: 100vh; }
+    width: 80vw;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 100px; }
+    @media screen and (max-width: 620px) {
+      article.page .entry-content {
+        height: auto;
+        padding: 0;
+        margin: 0 auto; } }
+    article.page .entry-content .project-list {
+      background-color: white;
+      border: 1px solid;
+      padding: 1% 2%;
+      width: 75%;
+      margin-left: 10%; }
+      @media screen and (max-width: 768px) {
+        article.page .entry-content .project-list {
+          width: 95%;
+          margin-left: 0; } }
+    article.page .entry-content .project-title {
+      font-size: 0.75em;
+      text-transform: uppercase; }
 
+/*--------------------------------------------------------------
+# Mobile Background
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Coming Soon
 --------------------------------------------------------------*/
+.cs-pages-video-cover {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: 85vh;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity; }
+  @media screen and (min-width: 1360px) {
+    .cs-pages-video-cover {
+      height: auto; } }
+  @media screen and (max-height: 680px) {
+    .cs-pages-video-cover {
+      height: 100vh; } }
+
+.cs-title-container {
+  width: 100%;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .cs-title-container .cs-title {
+    transform: scale(1.6);
+    display: flex;
+    max-width: 70%; }
+    @media screen and (max-width: 768px) {
+      .cs-title-container .cs-title {
+        transform: scale(1.2); } }
+
 /*--------------------------------------------------------------
 # Specials
 --------------------------------------------------------------*/
@@ -927,6 +1138,24 @@ article.page {
 --------------------------------------------------------------*/
 .is-visible {
   display: block; }
+
+.hidden {
+  opacity: 0; }
+
+.visible {
+  opacity: 1; }
+
+.filter {
+  filter: brightness(60%); }
+
+.visibility-hidden {
+  visibility: hidden; }
+
+/*--------------------------------------------------------------
+# Custom Cursor
+--------------------------------------------------------------*/
+body {
+  cursor: url("https://gunnarfloral.com/wp-content/uploads/2019/04/gunnar-main-cursor-86x86.png") 43 43, default; }
 
 /*--------------------------------------------------------------
 # Slick Settings
@@ -938,9 +1167,7 @@ article.page {
   opacity: 0;
   visibility: hidden;
   transition: opacity 1s ease;
-  margin: 0 auto;
-  height: auto;
-  max-width: 500px; }
+  height: auto; }
 
 .slick-gallery__projects.slick-initialized {
   visibility: visible;
@@ -952,21 +1179,54 @@ article.page {
 
 .projects-gallery-previous {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  z-index: 999;
-  height: 100%;
-  cursor: url("http://localhost:8888/gunnar/wp-content/uploads/2019/03/gunnar-custom-cursor_left.png"), auto; }
+  left: -100px;
+  bottom: 150px;
+  width: auto;
+  height: auto;
+  z-index: 9999;
+  cursor: url("https://gunnarfloral.com/wp-content/uploads/2019/04/gunnar-main-cursor-86x86.png") 43 43, default;
+  transform: scale(0.9);
+  transition: all 100ms ease-in-out; }
+  .projects-gallery-previous:hover {
+    transform: scale(1); }
+  @media screen and (max-width: 620px) {
+    .projects-gallery-previous {
+      bottom: 10%;
+      left: -22%; } }
+  @media screen and (max-width: 620px) {
+    .projects-gallery-previous img {
+      width: 75%; } }
+
+.projects-gallery-previous:focus {
+  outline: none; }
 
 .projects-gallery-next {
   position: absolute;
-  top: 0;
+  top: 100px;
   right: 0;
-  width: 50%;
-  position: absolute;
+  width: auto;
+  height: auto;
   z-index: 999;
-  height: 100%;
-  cursor: crosshair; }
+  cursor: url("https://gunnarfloral.com/wp-content/uploads/2019/04/gunnar-main-cursor-86x86.png") 43 43, default;
+  transform: rotate(160deg) scale(0.9);
+  transition: all 100ms ease-in-out; }
+  .projects-gallery-next:hover {
+    transform: rotate(160deg) scale(1); }
+  @media screen and (max-width: 620px) {
+    .projects-gallery-next {
+      top: 0;
+      right: -15%; } }
+  @media screen and (max-width: 620px) {
+    .projects-gallery-next img {
+      width: 75%; } }
+
+.projects-gallery-next:focus {
+  outline: none; }
+
+.project-item:focus {
+  outline: none; }
+
+html {
+  cursor: url("https://gunnarfloral.com/wp-content/uploads/2019/04/gunnar-main-cursor-86x86.png") 43 43, default; }
 
 /*# sourceMappingURL=style.css.map */

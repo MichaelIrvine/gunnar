@@ -37,3 +37,30 @@
 @mixin flexText_a {
 	font-size: calc(22px + (22 - 26) * ((100vw - 300px) / (1600 - 300)));
 }
+
+@mixin flexText_a-mobile {
+	font-size: calc(28px + (24 - 28) * ((100vw - 300px) / (1600 - 300)));
+}
+
+@mixin flexText_a-mobile_medium {
+	font-size: calc(20px + (20 - 26) * ((100vw - 300px) / (1600 - 300)));
+}
+
+@mixin flexText_a-mobile_small {
+	font-size: calc(18px + (18 - 22) * ((100vw - 300px) / (1600 - 300)));
+}
+
+
+
+//  FOOTER BLUR & FADE IN EFFECTS 
+
+@mixin flurIn {
+	opacity: 0;
+	filter: blur(3px);
+	transition: opacity 700ms ease-in, filter 600ms ease-in;
+}
+
+@mixin customCursor {
+	cursor: url('https://gunnarfloral.com/wp-content/uploads/2019/04/gunnar-main-cursor-86x86.png') 43 43, default;
+}
+

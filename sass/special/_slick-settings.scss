@@ -5,9 +5,9 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 1s ease;
-    margin: 0 auto;
+    // margin: 0 auto;
     height: auto;
-    max-width: 500px;
+    // max-width: 500px;
 }
 
 .slick-gallery__projects.slick-initialized {
@@ -23,21 +23,73 @@
 
 .projects-gallery-previous {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    z-index: 999;
-    height: 100%;
-    cursor: url('http://localhost:8888/gunnar/wp-content/uploads/2019/03/gunnar-custom-cursor_left.png'), auto;
+    left: -100px;
+    bottom: 150px;
+    width: auto;
+    height: auto;
+    z-index: 9999;
+    // Cursor
+    @include customCursor;
+    transform: scale(0.9);
+    transition: all 100ms ease-in-out;
+    
+
+    &:hover {
+        transform: scale(1);
+    }
+
+    @media screen and (max-width: 620px){
+        bottom: 10%;
+        left: -22%;
+    }
+
+    img { 
+        @media screen and (max-width: 620px){
+            width: 75%;
+        }   
+    }
 }
+
+.projects-gallery-previous:focus {
+    outline: none;
+}
+
 
 .projects-gallery-next {
     position: absolute;
-    top: 0;
+    top: 100px;
     right: 0;
-    width: 50%;
-    position: absolute;
+    width: auto;
+    height: auto;
     z-index: 999;
-    height: 100%;
-    cursor: crosshair
+    // Cursor
+    @include customCursor;
+    transform: rotate(160deg) scale(0.9);
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+        transform: rotate(160deg) scale(1);
+    }
+
+    @media screen and (max-width: 620px){
+        top: 0;
+        right: -15%;
+    }
+
+    img { 
+        @media screen and (max-width: 620px){
+            width: 75%;
+        }   
+    }
+    
 }
+
+
+.projects-gallery-next:focus {
+    outline: none;
+}
+
+.project-item:focus {
+    outline: none;
+}
+

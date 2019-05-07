@@ -3,3 +3,18 @@
 }
 
 
+.hidden {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.filter {
+    filter: brightness(60%);
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}

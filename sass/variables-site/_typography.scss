@@ -5,10 +5,14 @@ $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
 // Custom Fonts
-$font__druk: Druk, serif;
-$font__tundra: Tundra, serif;
+// @font-face {
+//     font-family: 'swis721_ex_btbold';
+//     src: url('/wp-content/themes/gunnar/fonts/swisseb-webfont.woff2') format('woff2'),
+//          url('/wp-content/themes/gunnar/swisseb-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+$font__gunnar: 'swis721_ex_btbold';
 
 
-// Adobe Fonts
-$font__litania: litania, serif;
-$font__ivymode: ivymode, sans-serif;

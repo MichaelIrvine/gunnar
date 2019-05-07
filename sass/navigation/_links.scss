@@ -1,7 +1,10 @@
 a {
 	color: $color__link;
-	font-family: $font__druk;
+	font-family: $font__gunnar;
 	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	@include customCursor;
+	letter-spacing: 1px;
 
 	&:visited {
 		color: $color__link-visited;
@@ -11,9 +14,10 @@ a {
 	&:active {
 		color: $color__link-hover;
 		
+		
 	}
 	&:focus {
-		outline: thin dotted;
+		outline: 0;
 	}
 	&:hover,
 	&:active {

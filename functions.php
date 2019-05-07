@@ -125,14 +125,19 @@ add_action( 'widgets_init', 'gunnar_widgets_init' );
     	
 function gunnar_scripts() {
 	wp_enqueue_style( 'gunnar-style', get_stylesheet_uri() );
-	
+
+	// Custom Fonts
+		wp_enqueue_style('gunnar-customfont', get_stylesheet_directory_uri() . '/stylesheet.css', true);
+	// /Applications/MAMP/htdocs/gunnar/wp-content/themes/gunnar/stylesheet.css
 	// Slick Slider CSS 
 	wp_enqueue_style('gunnar-slick', get_stylesheet_directory_uri() . '/node_modules/slick-carousel/slick/slick.css', true);
 	wp_enqueue_style('gunnar-slicktheme', get_stylesheet_directory_uri() . '/node_modules/slick-carousel/slick/slick-theme.css', true);
 	
 	// Adobe Font
-	wp_enqueue_style('gunnar-adobefonts', "https://use.typekit.net/xzq2utj.css");
-
+	wp_enqueue_style('gunnar-adobefonts', "https://use.typekit.net/cdx1iod.css");
+	
+	// Jump Link -- Smooth Scroller
+	wp_enqueue_script( 'jump_link', get_stylesheet_directory_uri() . '/js/jump-link.js', array('jquery'), '1.1', true );
 
 
 	wp_enqueue_script( 'gunnar-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -202,6 +207,19 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
+/**
+ * Contact Details
+ */
+if( function_exists('acf_add_options_page') ) {
+    $args = array(
+          'page_title' => 'Contact Info',
+		  'menu_title' => 'Contact Info',
+		  'menu_slug'  => 'contact_info',
+          'icon_url' => 'dashicons-palmtree'
+          //other args
+      );
+    acf_add_options_page($args);
+}
 
 /**
  * Custom Logo
@@ -217,20 +235,6 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_page($args);
 }
 
-/**
- * Custom Footer
- */
-if( function_exists('acf_add_options_page') ) {
-    $args = array(
-          'page_title' => 'Footer',
-		  'menu_title' => 'Footer',
-		  'menu_slug'  => 'footer',
-          'icon_url' => 'dashicons-edit'
-          //other args
-      );
-    acf_add_options_page($args);
-
-}
 
 /**
  * Video Background
@@ -248,63 +252,6 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 
-/**
- * GUNNAR CPT - Projects ------
- */
- function gunnar_register_custom_post_types() {
-    $labels = array(
-        'name'               => _x( 'Projects', 'post type general name' ),
-        'singular_name'      => _x( 'Projects', 'post type singular name'),
-        'menu_name'          => _x( 'Projects', 'admin menu' ),
-        'name_admin_bar'     => _x( 'Projects', 'add new on admin bar' ),
-        'add_new'            => _x( 'Add New', 'Projects' ),
-        'add_new_item'       => __( 'Add New Projects' ),
-        'new_item'           => __( 'New Projects' ),
-        'edit_item'          => __( 'Edit Projects' ),
-        'view_item'          => __( 'View Projects' ),
-        'all_items'          => __( 'All Projects' ),
-        'search_items'       => __( 'Search Projects' ),
-        'parent_item_colon'  => __( 'Parent Projects:' ),
-        'not_found'          => __( 'No Projects found.' ),
-        'not_found_in_trash' => __( 'No Projects found in Trash.' ),
-        'archives'           => __( 'Projects Archives'),
-        'insert_into_item'   => __( 'Uploaded to this Projects'),
-        'uploaded_to_this_item' => __( 'Projects Archives'),
-        'filter_item_list'   => __( 'Filter Projects list'),
-        'items_list_navigation' => __( 'Projects list navigation'),
-        'items_list'         => __( 'Projects list'),
-        'featured_image'     => __( 'Projects feature image'),
-        'set_featured_image' => __( 'Set Projects feature image'),
-        'remove_featured_image' => __( 'Remove Projects feature image'),
-		'use_featured_image' => __( 'Use as feature image'),
-		
-    );
-
-    $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'show_in_nav_menus'  => true,
-        'show_in_admin_bar'  => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'projects' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => 20,
-        'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
-				'menu_icon'          => 'dashicons-migrate',
-				'taxonomies'          => array('project_types'),
-				'show_in_nav_menus' => true,
-
-    );
-	register_post_type( 'projects', $args );
-
-	 }
- add_action( 'init', 'gunnar_register_custom_post_types' );
-
 
  /* Flush */
 
@@ -315,43 +262,26 @@ if( function_exists('acf_add_options_page') ) {
 	register_activation_hook( __FILE__, 'gunnar_rewrite_flush' );
 
 
-	 /**
- * GUNNAR Register Custom Taxonomy
+/**
+ * Custom Logo for Login
  */
-function project_types() {
 
-	$labels = array(
-		'name'                       => _x( 'Project Types', 'Taxonomy General Name', 'text_domain' ),
-		'singular_name'              => _x( 'Project Type', 'Taxonomy Singular Name', 'text_domain' ),
-		'menu_name'                  => __( 'Project Type', 'text_domain' ),
-		'all_items'                  => __( 'All Project Types', 'text_domain' ),
-		'parent_item'                => __( 'Parent Project Type', 'text_domain' ),
-		'parent_item_colon'          => __( 'Parent Project Type', 'text_domain' ),
-		'new_item_name'              => __( 'New Project Type Name', 'text_domain' ),
-		'add_new_item'               => __( 'Add New Project Type', 'text_domain' ),
-		'edit_item'                  => __( 'Edit Project Type', 'text_domain' ),
-		'update_item'                => __( 'Update Project Type', 'text_domain' ),
-		'view_item'                  => __( 'View Project Type', 'text_domain' ),
-		'separate_items_with_commas' => __( 'Separate project type with commas', 'text_domain' ),
-		'add_or_remove_items'        => __( 'Add or remove Project Types', 'text_domain' ),
-		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
-		'popular_items'              => __( 'Popular Project Types', 'text_domain' ),
-		'search_items'               => __( 'Search Project Types', 'text_domain' ),
-		'not_found'                  => __( 'Not Found', 'text_domain' ),
-		'no_terms'                   => __( 'No Project Types', 'text_domain' ),
-		'items_list'                 => __( 'Project Types list', 'text_domain' ),
-		'items_list_navigation'      => __( 'Project Types list navigation', 'text_domain' ),
-	);
-	$args = array(
-		'labels'                     => $labels,
-		'hierarchical'               => true,
-		'public'                     => true,
-		'show_ui'                    => true,
-		'show_admin_column'          => true,
-		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => true,
-	);
-	register_taxonomy( 'project_types', array( 'projects' ), $args );
+ function login_logo_gunnar() { 
+?> 
+<style type="text/css"> 
+body.login div#login h1 a {
+background-image: url(http://gunnar-staging.michaelirvinedesign.ca/wp-content/uploads/2019/04/Logo.png); 
+padding-bottom: 30px; 
+} 
+</style>
+<?php 
+} add_action( 'login_enqueue_scripts', 'login_logo_gunnar' );
 
+
+function load_js_assets() {
+    if( is_page( 6 ) ) {
+			wp_enqueue_script( 'gunnar-coming-soon', get_template_directory_uri() . '/js/coming-soon.js', array('jquery'), '20192504', true );
+    } 
 }
-add_action( 'init', 'project_types', 0 );
+ 
+add_action('wp_enqueue_scripts', 'load_js_assets');

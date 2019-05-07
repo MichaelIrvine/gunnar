@@ -15,11 +15,16 @@
 get_header();
 ?>
 
-
 	<div id="cs-primary" class="content-area">
 		<main id="cs-main" class="site-main cs-main">
 		
+		<?php 
 
+		$mobileBackground = get_field('mobile_background', 'option'); 
+
+		?>
+		
+		<!-- <div class="cs-mobile-background" style="background-image: url('<?php echo $mobileBackground; ?>')"></div> -->
 
 		<div class="cs-page-video-background">
 		<?php
@@ -45,7 +50,6 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-
 <?php
-
+get_sidebar();
 get_footer();

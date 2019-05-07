@@ -13,38 +13,55 @@
     transform: translateX(-50%) translateY(-50%);
     background-size: cover;
     transition: 1s opacity;
+    filter: blur(5px);
 
-    // For bigger screen sizes
-    @media screen and (min-width: 1500px){
-        height: auto;
-    }
+        // For bigger screen sizes
+        @media screen and (min-width: 1360px){
+            height: auto;
+        }
 
-    // For mobile screen sizes
-    @media screen and (max-width: 420px){
-        height: 60vh;
-    }
+        @media screen and (max-height: 680px){
+            height: 100vh;
+        }
 }
 
 
 
 article.page {
-    height: 100vh;
     display: flex;
+    width: 100%;
+
+    @media screen and (max-width: 620px){
+            flex-direction: column;
+            height: auto;
+        }
 
     .entry-header {
         display: flex;
-        width: 25%;
+        align-items: flex-start;
+        width: 20vw;
+        margin-top: 2em;
+        margin-left: 2em;
+        
 
         .project-page-title {
-            width: auto;
+            width: 100%;
             display: flex;
             align-items: center;
+            justify-content: center;
+
+            @media screen and (max-width: 768px){
+                display: none;
+            }
 
             svg {
-                transform: rotate(-90deg);
+                width: auto;
+                height: 77vh;
 
-                text {
-                    fill: white;
+                g {
+                    path {
+                        stroke-width: 0.20;
+                    }
                 }
             }
         }
@@ -66,8 +83,41 @@ article.page {
     }
 
     .entry-content {
-        width: 100%;
-        height: 100vh;
+        width: 80vw;
+        height: auto;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 100px;
+        
+
+        @media screen and (max-width: 620px){
+            height: auto;
+            padding: 0;
+            margin: 0 auto;
+            
+        }
+
+        .project-list {
+            background-color: white;
+            border: 1px solid;
+            padding: 1% 2%;
+            width: 75%;
+            margin-left: 10%;
+
+
+            @media screen and (max-width: 768px){
+                width: 95%;
+                margin-left: 0;
+                
+            }
+
+        }
+
+        .project-title {
+            font-size: 0.75em;
+            text-transform: uppercase;
+
+        }
     }
 
 }

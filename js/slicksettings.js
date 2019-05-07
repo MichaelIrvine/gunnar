@@ -5,21 +5,21 @@ jQuery(document).ready(function($) {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
-    autoplaySpeed: 3000, 
+    autoplaySpeed: 3000,
     speed: 300,
     adaptiveHeight: false,
     fade: true,
     arrows: true,
     dots: false,
     nextArrow:
-      '<button class="projects-gallery-next project-gallery-arrow" aria-label="Next" type="button">Next&#x2192;</button>',
+      '<button class="projects-gallery-next project-gallery-arrow" aria-label="Next" type="button"><img src="https://gunnarfloral.com/wp-content/uploads/2019/03/gunnar-custom-cursor_left-128x128.png"/></button>',
     prevArrow:
-      '<button class="projects-gallery-previous project-gallery-arrow" aria-label="Previous" type="button">&#x2190;Previous</button>',
+      '<button class="projects-gallery-previous project-gallery-arrow" aria-label="Previous" type="button"><img src="https://gunnarfloral.com/wp-content/uploads/2019/03/gunnar-custom-cursor_left-128x128.png"/></button>',
     responsive: [
       {
-        breakpoint: 475,
+        breakpoint: 620,
         settings: {
-          arrows: false,
+          arrows: true
         }
       }
     ]
